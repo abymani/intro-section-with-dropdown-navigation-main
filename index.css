@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
+
+:root{
+    /* ### Neutral */
+
+--Almost-White: hsl(0, 0%, 98%);
+--Medium-Gray: hsl(0, 0%, 41%);
+--Almost-Black: hsl(0, 0%, 8%);
+
+
+--fs-paragraph: 18px;
+--ff-Epilogue : 'Epilogue', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(--ff-Epilogue);
+}
+p{
+    font-size: var(--fs-paragraph);
+}
+
+body {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Almost-White);
+    height: 100vh;
+    min-width: 800px;
+    position: relative;
+}
+.logo {
+    position: absolute;
+    top: 25px;
+    left: 10px;
+    width: 70px;
+}
+nav {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    top: 0%;
+    width: 100%;
+    padding: 1rem;
+    padding-left: 100px;
+    font-size: 12px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: inline-flex;
+}
+nav ul li {
+    margin: 10px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: var(--Medium-Gray);
+    position: relative;
+}
+
+nav ul li a i {
+    margin-left: 5px;
+    font-size: 10px;
+}
+.register {
+    border: 1px solid var(--Almost-Black);
+    border-radius: 12px;
+    padding: .6rem;
+}
+/* To set menu item style to bold when clicked on*/
+.bold{
+    font-weight: 700;
+}
+.sub-menu {
+    
+    position:absolute;
+    margin-top: 15px;
+    margin-left: -50px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 1px 1px 12px 4px hsla(0, 0%, 41%,0.2);
+}
+.active {
+    display: none;
+}
+.sub-menu ul {
+    display: block;
+    margin: 15px;
+    margin-inline: 5px;
+    font-size: 12px;
+}
+.sub-menu ul li{
+    padding: 3px;
+}
+.sub-menu ul li a {
+    display: flex;
+}
+.sub-menu ul li a img {
+    margin-right: 8px;
+    width: 12px;
+}
+
+.menu2 {
+    margin-left: 0;
+}
+
+/* .....................
+Mobile view
+...............
+*/
+
+.mobile-menu{
+    display: none;
+    position: absolute;
+    top: 25px;
+    right: 10px;
+}
+
+/* .............
+setting main content
+.............. */
+
+main {
+    width: 95%;
+    height: 90%;
+    padding:5%;
+    display: flex;
+}
+.content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    padding-right: 50px;
+
+}
+.heading {
+    margin-top: 60px;
+    font-size: 50px;
+    font-weight: 700;
+    color: var(--Almost-Black);
+}
+.paragraph {
+    font-size: 12px;
+    color: var(--Medium-Gray);
+    margin: 10px;
+    line-height: 1.1rem;
+    width: 70%;
+}
+.learn-btn {
+    padding: 1rem;
+    width: fit-content;
+    margin-block: 20px;
+    border-radius: 10px;
+    background-color: var(--Almost-Black);
+    color: var(--Almost-White);
+    border: 0px;
+}
+.logos {
+    margin-block: 20px;   
+}
+.logos img {
+    width: 70px;
+    margin-inline: 10px;
+}
+.image-container img{
+    height: 100%;
+    width: auto;
+}
+
+@media screen and (max-width:500px) {
+    body {
+        height: fit-content;
+        min-width: 100px;
+    }
+    .mobile-menu {
+        display: block;
+    }
+    #menu-close {
+        display:none;
+        z-index: 1;
+    }
+    nav {
+        display: none;
+        height: 100vh;
+        width: 60%;
+        right: 0;
+        padding: 0;
+        flex-direction: column;
+        justify-content:left;
+        align-items: left;
+        background-color: var(--Almost-White);
+
+    }
+    nav ul {
+        display: block;
+        left: 0;
+        margin-top: 60px;
+        padding-left: 20px;
+        font-size: 15px;
+    }
+    nav ul li {
+        margin: 15px;
+    }
+    nav ul li a i {
+        margin-left: 10px;
+    }
+
+    nav ul:last-child {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .register {
+        padding-inline: 50px;
+    }
+    
+    nav ul li .sub-menu {
+        width: fit-content;
+        position: relative;
+        margin-top: 10px;
+        background-color: var(--Almost-White);
+        box-shadow: none;
+        margin-left: -20px;
+    }
+    nav ul li .sub-menu ul {
+        display: block;
+        margin: 0;
+        font-size: 14px;
+ 
+    }
+    nav ul li .sub-menu ul li {
+        margin: 8px;
+        padding: 5px;
+    }
+    nav ul li .sub-menu ul li a img{
+
+        width: 14px;
+    }
+
+    main{
+        width: 100%;
+        height: fit-content;
+        flex-direction:column-reverse;
+        padding: 0;
+    }
+    .image-container img{
+        width: 100%;
+        height: auto;
+        margin-top: 50px;
+        /* padding: 0; */
+    }
+    .content-container {
+        justify-content: center;
+        align-items: center;
+        padding: 0px;
+
+    }
+    .heading {
+        margin-top: 10px;
+        font-size: 25px;
+    }
+    .paragraph {
+        width: 90%;
+        text-align: center;
+    }
+    .learn-btn {
+        margin-block: 2px;
+    }
+    .logos {
+    
+        width: 100%;
+    }
+    .logos img{
+        width: 60px;
+        margin-inline: 10px;
+    }
+
+}

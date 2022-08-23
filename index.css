@@ -29,7 +29,8 @@ body {
     align-items: center;
     background-color: var(--Almost-White);
     height: 100vh;
-    min-width: 800px;
+    width: 100vw;
+    min-width: 900px;
     position: relative;
 }
 .logo {
@@ -40,8 +41,6 @@ body {
 }
 nav {
     position: absolute;
-    display: flex;
-    justify-content: space-between;
     top: 0%;
     width: 100%;
     padding: 1rem;
@@ -53,6 +52,9 @@ nav ul {
     list-style-type: none;
     display: inline-flex;
 }
+nav ul:last-child {
+    float: right;
+}
 nav ul li {
     margin: 10px;
 }
@@ -61,22 +63,42 @@ nav ul li a {
     color: var(--Medium-Gray);
     position: relative;
 }
+nav ul li a:hover,nav ul li a:active {
+    font-weight: 700; 
+    color: var(--Almost-Black);
+}
 
 nav ul li a i {
     margin-left: 5px;
     font-size: 10px;
 }
+
 .register {
     border: 1px solid var(--Almost-Black);
     border-radius: 12px;
     padding: .6rem;
 }
-/* To set menu item style to bold when clicked on*/
-.bold{
+/* To open submenu*/
+
+.dropdown.active .menu-item{
     font-weight: 700;
+    color: var(--Almost-Black);
 }
+.dropdown.active a i.fa-solid {
+    transform: rotate(180deg);
+}
+.dropdown.active .sub-menu{
+    display: block;
+}
+/* .dropdown.active .sub-menu a {
+    font-weight: 500;
+} */
+
+/* ..............
+styling submenu
+................. */
 .sub-menu {
-    
+    display: none;
     position:absolute;
     margin-top: 15px;
     margin-left: -50px;
@@ -84,8 +106,8 @@ nav ul li a i {
     border-radius: 12px;
     box-shadow: 1px 1px 12px 4px hsla(0, 0%, 41%,0.2);
 }
-.active {
-    display: none;
+.sub-menu2{
+    margin-left: 0;
 }
 .sub-menu ul {
     display: block;
@@ -103,11 +125,6 @@ nav ul li a i {
     margin-right: 8px;
     width: 12px;
 }
-
-.menu2 {
-    margin-left: 0;
-}
-
 /* .....................
 Mobile view
 ...............
@@ -129,6 +146,7 @@ main {
     height: 90%;
     padding:5%;
     display: flex;
+    min-width: 900px;
 }
 .content-container {
     display: flex;
@@ -136,7 +154,7 @@ main {
     justify-content: space-between;
     padding: 20px;
     padding-right: 50px;
-
+    min-width: 60%;
 }
 .heading {
     margin-top: 60px;
@@ -160,6 +178,12 @@ main {
     color: var(--Almost-White);
     border: 0px;
 }
+.learn-btn:hover, .learn-btn:active{
+    cursor: pointer;
+    background-color: var(--Almost-White);
+    color: var(--Almost-Black);
+    border: 1px solid var(--Almost-Black);
+}
 .logos {
     margin-block: 20px;   
 }
@@ -176,6 +200,7 @@ main {
     body {
         height: fit-content;
         min-width: 100px;
+        min-height: 100vh;
     }
     .mobile-menu {
         display: block;
@@ -184,6 +209,16 @@ main {
         display:none;
         z-index: 1;
     }
+    body.active-m {
+        background-color:hsla(0, 0%, 8%,0.6) ;
+    }
+    body.active-m nav {
+        display: block;
+    }
+    body.active-m #menu-close {
+        display: block;
+    }
+
     nav {
         display: none;
         height: 100vh;
@@ -249,6 +284,7 @@ main {
         height: fit-content;
         flex-direction:column-reverse;
         padding: 0;
+        min-width: 100px;
     }
     .image-container img{
         width: 100%;
@@ -257,7 +293,8 @@ main {
         /* padding: 0; */
     }
     .content-container {
-        justify-content: center;
+        justify-content: space-between;
+        /* align-content: space-between; */
         align-items: center;
         padding: 0px;
 
@@ -271,15 +308,15 @@ main {
         text-align: center;
     }
     .learn-btn {
-        margin-block: 2px;
+        /* margin-block: 2px; */
     }
     .logos {
-    
         width: 100%;
     }
     .logos img{
-        width: 60px;
-        margin-inline: 10px;
+        /* float: left; */
+        width: 19%;
+        margin-inline: 2%;
     }
 
 }
